@@ -13,6 +13,7 @@ from vectorizer import vect
 
 # Preparing the Classifier
 cur_dir = os.path.dirname(__file__)
+  
 clf = pickle.load(open(os.path.join(cur_dir,'pkl_objects/classifier.pkl'), 'rb'))
 db = os.path.join(cur_dir, 'reviews.sqlite')
 
@@ -52,10 +53,7 @@ def results():
 	if request.method == 'POST' and form.validate():
 		review = request.form['moviereview']
 		y, proba = classify(review)
-		return render_template('results.html',
-	content=review,
-	prediction=y,
-	probability=round(proba*100, 2))
+		return render_template('results.html',content=review,prediction=y,probability=round(proba*100, 2))
 	return render_template('reviewform.html', form=form)
 
 @app.route('/thanks', methods=['POST'])
