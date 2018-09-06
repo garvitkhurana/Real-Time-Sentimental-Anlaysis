@@ -14,7 +14,7 @@ from vectorizer import vect
 # Preparing the Classifier
 cur_dir = os.path.dirname(__file__)
   
-clf = pickle.load(open(os.path.join(cur_dir,'pkl_objects/classifier.pkl'), 'rb'))
+clf = pickle.load(open(os.path.join(cur_dir, 'pkl_objects/classifier.pkl'), 'rb'), encoding='latin-1')
 db = os.path.join(cur_dir, 'reviews.sqlite')
 
 def classify(document):

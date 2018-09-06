@@ -25,7 +25,7 @@ def update_model(db_path, model, batch_size=10000):
 
 cur_dir = os.path.dirname(__file__)
 
-clf = pickle.load(open(os.path.join(cur_dir,'pkl_objects', 'classifier.pkl'), 'rb'))
+clf = pickle.load(open(os.path.join(cur_dir,'pkl_objects', 'classifier.pkl'), 'rb'), encoding='latin-1')
 db = os.path.join(cur_dir, 'reviews.sqlite')
 
 update_model(db_path=db, model=clf, batch_size=10000)
