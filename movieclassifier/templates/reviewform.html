@@ -3,14 +3,17 @@
 <html>
 <head>
  <title>Movie Classification</title>
+ <link rel="shortcut icon" type="image/png" href="pic.png"/>
+
 </head>
 
 <body>
-	<h2>Please enter your movie review:</h2>
-        <h3>Then, it will give a sentimental analysis:<br>
+	<h1 align="center"> Real Time Movie Review Analysis</h1>
+	<h2 align="center">Please enter your movie review:</h2>
+        <h3 align="center">Then, it will give a sentimental analysis:<br>
         positive or negative with it's probability!</h3> 
 	{% from "_formhelpers.html" import render_field %}
-	<form method=post action="/results">
+	<form align="center" method=post action="/results">
 		<dl>
 		{{ render_field(form.moviereview, cols='30', rows='10') }}
 		</dl>
