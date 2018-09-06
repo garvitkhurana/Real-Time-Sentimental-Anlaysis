@@ -3,7 +3,7 @@ import re
 import os
 import pickle
 
-cur_dir = os.path.dirname(os.path.abspath('__file__'))
+cur_dir = os.path.dirname(os.path.realpath(__file__))
 stop = pickle.load(open(os.path.join(cur_dir, 'pkl_objects','stopwords.pkl'), 'rb'))
 
 def tokenizer(text):
@@ -14,3 +14,6 @@ def tokenizer(text):
     return tokenized
 
 vect = HashingVectorizer(decode_error='ignore', n_features=2**21,preprocessor=None, tokenizer=tokenizer)
+
+clf=pickle.load(open(os.path.join(cur_dir, 'pkl_objects','classifier.pkl'), 'rb'))
+print(clf)
