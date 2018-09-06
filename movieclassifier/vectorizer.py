@@ -38,7 +38,7 @@ vect = HashingVectorizer(decode_error='ignore', n_features=2**21,preprocessor=No
 
 conn = sqlite3.connect('reviews.sqlite')
 c = conn.cursor()
-'''
+
 c.execute('CREATE TABLE review_db'\
         ' (review TEXT, sentiment INTEGER, date TEXT)')
 
@@ -54,7 +54,6 @@ c.execute("INSERT INTO review_db"\
 
 conn.commit()
 conn.close()
-'''
 
 conn = sqlite3.connect('reviews.sqlite')
 c = conn.cursor()
